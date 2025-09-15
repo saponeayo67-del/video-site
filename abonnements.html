@@ -5,102 +5,154 @@
   <title>Abonnements - FlashVid</title>
   <style>
     body {
+      margin: 0;
       font-family: Arial, sans-serif;
-      background: #f4f8ff;
-      color: #333;
-      text-align: center;
-      padding: 30px;
+      background: #f9fafc;
+      color: #222;
     }
-    h1 {
+
+    /* NAV */
+    nav {
+      background: white;
+      padding: 15px 40px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 1px solid #eee;
+      position: sticky;
+      top: 0;
+    }
+    nav .logo {
+      font-weight: bold;
+      font-size: 20px;
       color: #0066ff;
-      margin-bottom: 20px;
     }
-    .plans {
+    nav a {
+      margin: 0 12px;
+      text-decoration: none;
+      color: #333;
+      font-weight: bold;
+    }
+    nav a:hover {
+      color: #0066ff;
+    }
+
+    /* PRICING SECTION */
+    .pricing {
       display: flex;
       justify-content: center;
-      gap: 20px;
+      gap: 30px;
+      padding: 60px 20px;
       flex-wrap: wrap;
     }
     .card {
       background: white;
-      border: 1px solid #ddd;
-      border-radius: 10px;
-      padding: 20px;
-      width: 220px;
-      box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+      padding: 30px;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+      width: 280px;
+      text-align: center;
+      transition: transform 0.3s;
+    }
+    .card:hover {
+      transform: translateY(-8px);
     }
     .card h2 {
-      color: #0066ff;
       margin-bottom: 10px;
+      color: #0066ff;
     }
-    .card p {
-      margin: 10px 0;
+    .price {
+      font-size: 26px;
+      font-weight: bold;
+      margin: 15px 0;
     }
-    .card button {
+    ul {
+      list-style: none;
+      padding: 0;
+      margin: 20px 0;
+      color: #555;
+      text-align: left;
+    }
+    ul li {
+      margin: 8px 0;
+    }
+    button {
       background: #0066ff;
       color: white;
       border: none;
-      padding: 10px 15px;
-      font-size: 14px;
-      border-radius: 6px;
+      padding: 12px 25px;
+      font-size: 16px;
+      border-radius: 25px;
       cursor: pointer;
       transition: background 0.3s;
     }
-    .card button:hover {
+    button:hover {
       background: #0044aa;
     }
-    nav {
-      background: #0066ff;
-      padding: 12px;
+
+    /* FOOTER */
+    footer {
+      background: #f0f0f0;
+      padding: 30px;
       text-align: center;
-      margin-bottom: 20px;
-    }
-    nav a {
-      color: white;
-      margin: 0 12px;
-      text-decoration: none;
-      font-weight: bold;
-    }
-    nav a:hover {
-      text-decoration: underline;
+      margin-top: 40px;
+      font-size: 14px;
+      color: #666;
     }
   </style>
 </head>
 <body>
-  <!-- ✅ Menu en haut -->
+
+  <!-- NAV -->
   <nav>
-    <a href="index.html">🏠 Accueil</a>
-    <a href="creer-video.html">🎥 Créer une vidéo</a>
-    <a href="abonnements.html">💳 Abonnements</a>
+    <div class="logo">⚡ FlashVid</div>
+    <div>
+      <a href="index.html">Accueil</a>
+      <a href="creer-video.html">Créer</a>
+      <a href="abonnements.html">Abonnements</a>
+    </div>
   </nav>
 
-  <h1>Nos offres d’abonnements</h1>
-  <div class="plans">
+  <!-- PRICING -->
+  <section class="pricing">
     <div class="card">
-      <h2>Semaine</h2>
-      <p>4,6 €</p>
-      <button>S’abonner</button>
+      <h2>⭐ Semaine</h2>
+      <div class="price">4,6 €</div>
+      <ul>
+        <li>✔ 10 vidéos</li>
+        <li>✔ Téléchargement HD</li>
+        <li>✔ Support email</li>
+      </ul>
+      <button>S'abonner</button>
     </div>
+
     <div class="card">
-      <h2>2 Semaines</h2>
-      <p>8 €</p>
-      <button>S’abonner</button>
+      <h2>🔥 1 Mois</h2>
+      <div class="price">23 €</div>
+      <ul>
+        <li>✔ 50 vidéos</li>
+        <li>✔ Téléchargement HD</li>
+        <li>✔ Accès prioritaire</li>
+      </ul>
+      <button>S'abonner</button>
     </div>
+
     <div class="card">
-      <h2>1 Mois</h2>
-      <p>23 €</p>
-      <button>S’abonner</button>
+      <h2>💎 1 An</h2>
+      <div class="price">60 €</div>
+      <ul>
+        <li>✔ Vidéos illimitées</li>
+        <li>✔ Qualité 4K</li>
+        <li>✔ Support VIP</li>
+      </ul>
+      <button>S'abonner</button>
     </div>
-    <div class="card">
-      <h2>4 Mois</h2>
-      <p>43 €</p>
-      <button>S’abonner</button>
-    </div>
-    <div class="card">
-      <h2>1 An</h2>
-      <p>60 €</p>
-      <button>S’abonner</button>
-    </div>
-  </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    © 2025 FlashVid. Tous droits réservés. | Contact : support@flashvid.com
+  </footer>
+
 </body>
 </html>
