@@ -5,87 +5,85 @@
   <title>Créer une vidéo - FlashVid</title>
   <style>
     body {
+      margin: 0;
       font-family: Arial, sans-serif;
-      background: #f4f8ff;
+      background: #f9fbff;
       color: #333;
+    }
+    nav {
+      background: white;
+      padding: 15px 30px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 1px solid #eee;
+      position: sticky;
+      top: 0;
+    }
+    nav a {
+      color: #333;
+      margin: 0 12px;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    nav a:hover {
+      color: #0066ff;
+    }
+    .container {
+      max-width: 600px;
+      margin: 60px auto;
+      background: white;
+      padding: 40px;
+      border-radius: 12px;
+      box-shadow: 0px 4px 10px rgba(0,0,0,0.1);
       text-align: center;
-      padding: 50px;
     }
     h1 {
       color: #0066ff;
       margin-bottom: 20px;
     }
-    form {
-      background: white;
-      border: 1px solid #ddd;
-      border-radius: 10px;
-      padding: 30px;
-      display: inline-block;
-      box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    p {
+      color: #555;
+      margin-bottom: 20px;
     }
     input[type="file"] {
-      margin: 15px 0;
+      margin: 20px 0;
     }
     button {
       background: #0066ff;
       color: white;
       border: none;
-      padding: 12px 20px;
+      padding: 12px 24px;
       font-size: 16px;
-      border-radius: 6px;
+      border-radius: 25px;
       cursor: pointer;
       transition: background 0.3s ease;
     }
     button:hover {
       background: #0044aa;
     }
-    #message {
-      margin-top: 20px;
-      font-weight: bold;
-      color: green;
-    }
-    nav {
-      background: #0066ff;
-      padding: 12px;
-      text-align: center;
-      margin-bottom: 20px;
-    }
-    nav a {
-      color: white;
-      margin: 0 12px;
-      text-decoration: none;
-      font-weight: bold;
-    }
-    nav a:hover {
-      text-decoration: underline;
-    }
   </style>
 </head>
 <body>
   <!-- ✅ Menu -->
   <nav>
-    <a href="index.html">🏠 Accueil</a>
-    <a href="creer-video.html">🎥 Créer une vidéo</a>
-    <a href="abonnements.html">💳 Abonnements</a>
+    <div class="logo">⚡ FlashVid</div>
+    <div>
+      <a href="index.html">Accueil</a>
+      <a href="creer-video.html">Créer une vidéo</a>
+      <a href="abonnements.html">Abonnements</a>
+    </div>
   </nav>
 
-  <h1>Créer une vidéo gratuite 🎬</h1>
-
-  <form onsubmit="simulerCreation(event)">
-    <p>Choisis une image à transformer :</p>
-    <input type="file" accept="image/*" required>
-    <br><br>
-    <button type="submit">Créer ma vidéo</button>
-  </form>
-
-  <p id="message"></p>
-
-  <script>
-    function simulerCreation(event) {
-      event.preventDefault();
-      document.getElementById("message").textContent = 
-        "✅ Vidéo en cours de création... (simulation)";
-    }
-  </script>
+  <!-- ✅ Contenu -->
+  <div class="container">
+    <h1>Créer ta vidéo 🎥</h1>
+    <p>Sélectionne une image et clique sur le bouton pour la transformer en vidéo.</p>
+    <form>
+      <input type="file" accept="image/*">
+      <br>
+      <button type="button">✨ Générer la vidéo</button>
+    </form>
+  </div>
 </body>
 </html>
