@@ -1,20 +1,101 @@
-
 <!DOCTYPE html>
 <html lang="fr">
 <head>
   <meta charset="UTF-8">
   <title>Nos abonnements - FlashVid</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f4f8ff;
+      color: #333;
+      text-align: center;
+      padding: 30px;
+    }
+    h1 {
+      color: #0066ff;
+      margin-bottom: 40px;
+    }
+    .plans {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 20px;
+    }
+    .plan {
+      background: white;
+      border: 1px solid #ddd;
+      border-radius: 10px;
+      padding: 20px;
+      width: 220px;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+      transition: transform 0.2s;
+    }
+    .plan:hover {
+      transform: scale(1.05);
+    }
+    .plan h2 {
+      color: #0066ff;
+    }
+    .price {
+      font-size: 22px;
+      font-weight: bold;
+      margin: 15px 0;
+    }
+    button {
+      background: #0066ff;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      font-size: 14px;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: background 0.3s ease;
+    }
+    button:hover {
+      background: #0044aa;
+    }
+    a {
+      display: block;
+      margin-top: 30px;
+      color: #0066ff;
+      text-decoration: none;
+    }
+    a:hover {
+      text-decoration: underline;
+    }
+  </style>
 </head>
 <body>
-  <h1>Choisis ton abonnement 📦</h1>
-  <ul>
-    <li>1 semaine : 4,6 €</li>
-    <li>2 semaines : 8 €</li>
-    <li>1 mois : 23 €</li>
-    <li>4 mois : 43 €</li>
-    <li>1 an : 60 €</li>
-  </ul>
-  <p>Bientôt tu pourras payer directement ici 💳</p>
+  <h1>Nos abonnements 📦</h1>
+
+  <div class="plans">
+    <div class="plan">
+      <h2>1 Semaine</h2>
+      <p class="price">4,6 €</p>
+      <button>Choisir</button>
+    </div>
+    <div class="plan">
+      <h2>2 Semaines</h2>
+      <p class="price">8 €</p>
+      <button>Choisir</button>
+    </div>
+    <div class="plan">
+      <h2>1 Mois</h2>
+      <p class="price">23 €</p>
+      <button>Choisir</button>
+    </div>
+    <div class="plan">
+      <h2>4 Mois</h2>
+      <p class="price">43 €</p>
+      <button>Choisir</button>
+    </div>
+    <div class="plan">
+      <h2>1 An</h2>
+      <p class="price">60 €</p>
+      <button>Choisir</button>
+    </div>
+  </div>
+
   <a href="index.html">⬅ Retour à l’accueil</a>
 </body>
 </html>
