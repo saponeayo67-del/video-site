@@ -2,7 +2,7 @@
 <html lang="fr">
 <head>
   <meta charset="UTF-8">
-  <title>Nos abonnements - FlashVid</title>
+  <title>Abonnements - FlashVid</title>
   <style>
     body {
       font-family: Arial, sans-serif;
@@ -13,89 +13,94 @@
     }
     h1 {
       color: #0066ff;
-      margin-bottom: 40px;
+      margin-bottom: 20px;
     }
     .plans {
       display: flex;
       justify-content: center;
-      flex-wrap: wrap;
       gap: 20px;
+      flex-wrap: wrap;
     }
-    .plan {
+    .card {
       background: white;
       border: 1px solid #ddd;
       border-radius: 10px;
       padding: 20px;
       width: 220px;
       box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-      transition: transform 0.2s;
     }
-    .plan:hover {
-      transform: scale(1.05);
-    }
-    .plan h2 {
+    .card h2 {
       color: #0066ff;
+      margin-bottom: 10px;
     }
-    .price {
-      font-size: 22px;
-      font-weight: bold;
-      margin: 15px 0;
+    .card p {
+      margin: 10px 0;
     }
-    button {
+    .card button {
       background: #0066ff;
       color: white;
       border: none;
-      padding: 10px 20px;
+      padding: 10px 15px;
       font-size: 14px;
       border-radius: 6px;
       cursor: pointer;
-      transition: background 0.3s ease;
+      transition: background 0.3s;
     }
-    button:hover {
+    .card button:hover {
       background: #0044aa;
     }
-    a {
-      display: block;
-      margin-top: 30px;
-      color: #0066ff;
-      text-decoration: none;
+    nav {
+      background: #0066ff;
+      padding: 12px;
+      text-align: center;
+      margin-bottom: 20px;
     }
-    a:hover {
+    nav a {
+      color: white;
+      margin: 0 12px;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    nav a:hover {
       text-decoration: underline;
     }
   </style>
 </head>
 <body>
-  <h1>Nos abonnements 📦</h1>
+  <!-- ✅ Menu en haut -->
+  <nav>
+    <a href="index.html">🏠 Accueil</a>
+    <a href="creer-video.html">🎥 Créer une vidéo</a>
+    <a href="abonnements.html">💳 Abonnements</a>
+  </nav>
 
+  <h1>Nos offres d’abonnements</h1>
   <div class="plans">
-    <div class="plan">
-      <h2>1 Semaine</h2>
-      <p class="price">4,6 €</p>
-      <button>Choisir</button>
+    <div class="card">
+      <h2>Semaine</h2>
+      <p>4,6 €</p>
+      <button>S’abonner</button>
     </div>
-    <div class="plan">
+    <div class="card">
       <h2>2 Semaines</h2>
-      <p class="price">8 €</p>
-      <button>Choisir</button>
+      <p>8 €</p>
+      <button>S’abonner</button>
     </div>
-    <div class="plan">
+    <div class="card">
       <h2>1 Mois</h2>
-      <p class="price">23 €</p>
-      <button>Choisir</button>
+      <p>23 €</p>
+      <button>S’abonner</button>
     </div>
-    <div class="plan">
+    <div class="card">
       <h2>4 Mois</h2>
-      <p class="price">43 €</p>
-      <button>Choisir</button>
+      <p>43 €</p>
+      <button>S’abonner</button>
     </div>
-    <div class="plan">
+    <div class="card">
       <h2>1 An</h2>
-      <p class="price">60 €</p>
-      <button>Choisir</button>
+      <p>60 €</p>
+      <button>S’abonner</button>
     </div>
   </div>
-
-  <a href="index.html">⬅ Retour à l’accueil</a>
 </body>
 </html>
