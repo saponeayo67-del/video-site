@@ -92,12 +92,54 @@
 
     /* FOOTER */
     footer {
-      background: #f0f0f0;
-      padding: 30px;
+      background: #111;
+      color: #ccc;
+      padding: 40px 20px;
+      margin-top: 60px;
+    }
+    .footer-container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      max-width: 1000px;
+      margin: auto;
+    }
+    .footer-col {
+      flex: 1;
+      min-width: 220px;
+      margin: 20px;
+    }
+    .footer-col h3 {
+      color: #fff;
+      margin-bottom: 15px;
+    }
+    .footer-col a {
+      display: block;
+      color: #aaa;
+      text-decoration: none;
+      margin: 8px 0;
+      transition: color 0.3s;
+    }
+    .footer-col a:hover {
+      color: #fff;
+    }
+    .socials {
+      margin-top: 15px;
+    }
+    .socials a {
+      margin-right: 12px;
+      font-size: 20px;
+      color: #aaa;
+      text-decoration: none;
+    }
+    .socials a:hover {
+      color: #fff;
+    }
+    .copyright {
       text-align: center;
-      margin-top: 40px;
+      margin-top: 30px;
       font-size: 14px;
-      color: #666;
+      color: #888;
     }
   </style>
 </head>
@@ -151,7 +193,36 @@
 
   <!-- FOOTER -->
   <footer>
-    © 2025 FlashVid. Tous droits réservés. | Contact : support@flashvid.com
+    <div class="footer-container">
+      <div class="footer-col">
+        <h3>FlashVid</h3>
+        <p>Transformez vos images en vidéos grâce à notre technologie IA. Simple, rapide et efficace.</p>
+      </div>
+      <div class="footer-col">
+        <h3>Liens rapides</h3>
+        <a href="index.html">Accueil</a>
+        <a href="creer-video.html">Créer une vidéo</a>
+        <a href="abonnements.html">Abonnements</a>
+      </div>
+      <div class="footer-col">
+        <h3>Contact</h3>
+        <a href="mailto:support@flashvid.com">support@flashvid.com</a>
+        <a href="#">Centre d'aide</a>
+        <a href="#">Mentions légales</a>
+      </div>
+      <div class="footer-col">
+        <h3>Suivez-nous</h3>
+        <div class="socials">
+          <a href="#">🌐</a>
+          <a href="#">📘</a>
+          <a href="#">🐦</a>
+          <a href="#">📸</a>
+        </div>
+      </div>
+    </div>
+    <div class="copyright">
+      © 2025 FlashVid. Tous droits réservés.
+    </div>
   </footer>
 
 </body>
