@@ -2,15 +2,79 @@
 <html lang="fr">
 <head>
   <meta charset="UTF-8">
-  <title>Créer une vidéo gratuite - FlashVid</title>
+  <title>Créer une vidéo - FlashVid</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f4f8ff;
+      color: #333;
+      text-align: center;
+      padding: 50px;
+    }
+    h1 {
+      color: #0066ff;
+      margin-bottom: 20px;
+    }
+    form {
+      background: white;
+      border: 1px solid #ddd;
+      border-radius: 10px;
+      padding: 30px;
+      display: inline-block;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    }
+    input[type="file"] {
+      margin: 15px 0;
+    }
+    button {
+      background: #0066ff;
+      color: white;
+      border: none;
+      padding: 12px 20px;
+      font-size: 16px;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: background 0.3s ease;
+    }
+    button:hover {
+      background: #0044aa;
+    }
+    #message {
+      margin-top: 20px;
+      font-weight: bold;
+      color: green;
+    }
+    a {
+      display: block;
+      margin-top: 30px;
+      color: #0066ff;
+      text-decoration: none;
+    }
+    a:hover {
+      text-decoration: underline;
+    }
+  </style>
 </head>
 <body>
   <h1>Créer une vidéo gratuite 🎬</h1>
-  <p>Ici tu pourras transformer tes images en vidéos.</p>
-  <button onclick="alert('Fonctionnalité en cours de développement 🚀')">
-    Choisir une image
-  </button>
-  <br><br>
+
+  <form onsubmit="simulerCreation(event)">
+    <p>Choisis une image à transformer :</p>
+    <input type="file" accept="image/*" required>
+    <br><br>
+    <button type="submit">Créer ma vidéo</button>
+  </form>
+
+  <p id="message"></p>
+
   <a href="index.html">⬅ Retour à l’accueil</a>
+
+  <script>
+    function simulerCreation(event) {
+      event.preventDefault();
+      document.getElementById("message").textContent = 
+        "✅ Vidéo en cours de création... (simulation)";
+    }
+  </script>
 </body>
 </html>
