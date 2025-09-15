@@ -5,66 +5,78 @@
   <title>FlashVid - Transforme tes images en vidéos</title>
   <style>
     body {
+      margin: 0;
       font-family: Arial, sans-serif;
-      background: #f4f8ff;
+      background: #f9fbff;
       color: #333;
-      text-align: center;
-      padding: 50px;
-    }
-    h1 {
-      color: #0066ff;
-    }
-    p {
-      font-size: 18px;
-      margin-bottom: 30px;
-    }
-    button {
-      background: #0066ff;
-      color: white;
-      border: none;
-      padding: 15px 25px;
-      font-size: 16px;
-      margin: 10px;
-      border-radius: 8px;
-      cursor: pointer;
-      transition: background 0.3s ease;
-    }
-    button:hover {
-      background: #0044aa;
     }
     nav {
-      background: #0066ff;
-      padding: 12px;
-      text-align: center;
-      margin-bottom: 20px;
+      background: white;
+      padding: 15px 30px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 1px solid #eee;
+      position: sticky;
+      top: 0;
     }
     nav a {
-      color: white;
+      color: #333;
       margin: 0 12px;
       text-decoration: none;
       font-weight: bold;
     }
     nav a:hover {
-      text-decoration: underline;
+      color: #0066ff;
+    }
+    .hero {
+      text-align: center;
+      padding: 80px 20px;
+      background: linear-gradient(to bottom, #f9fbff, #eef3ff);
+    }
+    .hero h1 {
+      font-size: 42px;
+      color: #0066ff;
+      margin-bottom: 20px;
+    }
+    .hero p {
+      font-size: 20px;
+      margin-bottom: 40px;
+      color: #444;
+    }
+    .hero button {
+      background: #0066ff;
+      color: white;
+      border: none;
+      padding: 15px 30px;
+      font-size: 18px;
+      border-radius: 30px;
+      cursor: pointer;
+      margin: 10px;
+      transition: background 0.3s ease;
+    }
+    .hero button:hover {
+      background: #0044aa;
     }
   </style>
 </head>
 <body>
   <!-- ✅ Menu -->
   <nav>
-    <a href="index.html">🏠 Accueil</a>
-    <a href="creer-video.html">🎥 Créer une vidéo</a>
-    <a href="abonnements.html">💳 Abonnements</a>
+    <div class="logo">⚡ FlashVid</div>
+    <div>
+      <a href="index.html">Accueil</a>
+      <a href="creer-video.html">Créer une vidéo</a>
+      <a href="abonnements.html">Abonnements</a>
+    </div>
   </nav>
 
-  <h1>Bienvenue sur FlashVid ⚡🎬</h1>
-  <p>Transforme facilement tes images en vidéos et profite de nos abonnements flexibles.</p>
-
-  <button onclick="window.location.href='creer-video.html'">
-    🎥 Créer une vidéo gratuite
-  </button>
-  <button onclick="window.location.href='abonnements.html'">
-    💳 Voir les abonnements
-  </button>
+  <!-- ✅ Section d’accueil -->
+  <div class="hero">
+    <h1>Transforme tes images en vidéos 🎬</h1>
+    <p>Profite de 3 vidéos gratuites et découvre nos abonnements à petit prix.</p>
+    <button onclick="window.location.href='creer-video.html'">🎥 Créer une vidéo</button>
+    <button onclick="window.location.href='abonnements.html'">💳 Voir abonnements</button>
+  </div>
 </body>
 </html>
