@@ -2,17 +2,18 @@
 <html lang="fr">
 <head>
   <meta charset="UTF-8">
-  <title>FlashVid - Transforme tes images en vidéos</title>
+  <title>FlashVid - IA Vidéo</title>
   <style>
     body {
       margin: 0;
       font-family: Arial, sans-serif;
-      background: #f9fbff;
-      color: #333;
+      background: #f9fafc;
+      color: #222;
     }
+    /* --- NAVIGATION --- */
     nav {
       background: white;
-      padding: 15px 30px;
+      padding: 15px 40px;
       display: flex;
       justify-content: space-between;
       align-items: center;
@@ -20,63 +21,126 @@
       position: sticky;
       top: 0;
     }
+    nav .logo {
+      font-weight: bold;
+      font-size: 20px;
+      color: #0066ff;
+    }
     nav a {
-      color: #333;
       margin: 0 12px;
       text-decoration: none;
+      color: #333;
       font-weight: bold;
     }
     nav a:hover {
       color: #0066ff;
     }
+
+    /* --- HERO SECTION --- */
     .hero {
       text-align: center;
-      padding: 80px 20px;
-      background: linear-gradient(to bottom, #f9fbff, #eef3ff);
+      padding: 100px 20px;
+      background: linear-gradient(to bottom right, #f0f5ff, #ffffff);
     }
     .hero h1 {
-      font-size: 42px;
-      color: #0066ff;
+      font-size: 48px;
       margin-bottom: 20px;
+      color: #111;
     }
     .hero p {
       font-size: 20px;
       margin-bottom: 40px;
-      color: #444;
+      color: #555;
     }
     .hero button {
       background: #0066ff;
       color: white;
       border: none;
-      padding: 15px 30px;
+      padding: 15px 35px;
       font-size: 18px;
       border-radius: 30px;
       cursor: pointer;
       margin: 10px;
-      transition: background 0.3s ease;
+      transition: background 0.3s;
     }
     .hero button:hover {
       background: #0044aa;
     }
+
+    /* --- HOW IT WORKS --- */
+    .steps {
+      display: flex;
+      justify-content: center;
+      gap: 30px;
+      padding: 60px 20px;
+      text-align: center;
+    }
+    .step {
+      background: white;
+      padding: 30px;
+      border-radius: 12px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+      width: 250px;
+    }
+    .step h3 {
+      margin-top: 15px;
+      color: #0066ff;
+    }
+
+    /* --- FOOTER --- */
+    footer {
+      background: #f0f0f0;
+      padding: 30px;
+      text-align: center;
+      margin-top: 40px;
+      font-size: 14px;
+      color: #666;
+    }
   </style>
 </head>
 <body>
-  <!-- ✅ Menu -->
+
+  <!-- NAV -->
   <nav>
     <div class="logo">⚡ FlashVid</div>
     <div>
       <a href="index.html">Accueil</a>
-      <a href="creer-video.html">Créer une vidéo</a>
+      <a href="creer-video.html">Créer</a>
       <a href="abonnements.html">Abonnements</a>
     </div>
   </nav>
 
-  <!-- ✅ Section d’accueil -->
-  <div class="hero">
+  <!-- HERO -->
+  <section class="hero">
     <h1>Transforme tes images en vidéos 🎬</h1>
-    <p>Profite de 3 vidéos gratuites et découvre nos abonnements à petit prix.</p>
+    <p>Profite de 3 vidéos gratuites et découvre la puissance de l’IA.</p>
     <button onclick="window.location.href='creer-video.html'">🎥 Créer une vidéo</button>
     <button onclick="window.location.href='abonnements.html'">💳 Voir abonnements</button>
-  </div>
+  </section>
+
+  <!-- HOW IT WORKS -->
+  <section class="steps">
+    <div class="step">
+      <img src="https://img.icons8.com/ios/100/upload.png" alt="Upload">
+      <h3>1. Upload</h3>
+      <p>Importe ton image.</p>
+    </div>
+    <div class="step">
+      <img src="https://img.icons8.com/ios/100/ai.png" alt="AI">
+      <h3>2. Génération</h3>
+      <p>Notre IA transforme ton image en vidéo.</p>
+    </div>
+    <div class="step">
+      <img src="https://img.icons8.com/ios/100/download.png" alt="Download">
+      <h3>3. Télécharge</h3>
+      <p>Récupère ta vidéo en quelques secondes.</p>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    © 2025 FlashVid. Tous droits réservés. | Contact : support@flashvid.com
+  </footer>
+
 </body>
 </html>
