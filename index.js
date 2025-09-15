@@ -3,10 +3,16 @@ const path = require("path");
 const app = express();
 const PORT = process.env.PORT || 3000;
 
-// Sert tous les fichiers statiques (HTML, CSS, images…)
-app.use(express.static(path.join(__dirname)));
+// Sert tous les fichiers statiques du projet
+app.use(express.static(__dirname));
 
-// Si quelqu’un tape une adresse qui n’existe pas → renvoyer index.html
+// Page d'accueil
+app.get("/", (req, res) => {
+  res.sendFile(path.join(__dirname, "index.html"));
+});
+
+// Si une page existe (abonnements.html ou creer-video.html), Express la trouvera
+// Sinon, ça retourne index.html par défaut
 app.get("*", (req, res) => {
   res.sendFile(path.join(__dirname, "index.html"));
 });
