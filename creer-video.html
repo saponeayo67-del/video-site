@@ -6,15 +6,15 @@
   <style>
     body {
       margin: 0;
-      font-family: Arial, sans-serif;
-      background: #f9fafc;
-      color: #222;
+      font-family: "Inter", Arial, sans-serif;
+      background: #fff;
+      color: #111;
+      text-align: center;
     }
 
-    /* NAV */
     nav {
-      background: white;
-      padding: 15px 40px;
+      background: #fff;
+      padding: 18px 40px;
       display: flex;
       justify-content: space-between;
       align-items: center;
@@ -23,79 +23,58 @@
       top: 0;
     }
     nav .logo {
-      font-weight: bold;
+      font-weight: 600;
       font-size: 20px;
-      color: #0066ff;
+      color: #111;
     }
     nav a {
-      margin: 0 12px;
+      margin: 0 15px;
       text-decoration: none;
       color: #333;
-      font-weight: bold;
+      font-size: 15px;
     }
     nav a:hover {
-      color: #0066ff;
+      color: #000;
     }
 
-    /* CONTAINER */
     .container {
+      padding: 50px 20px;
       max-width: 600px;
-      margin: 60px auto;
-      background: white;
-      padding: 40px;
-      border-radius: 12px;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.08);
-      text-align: center;
+      margin: auto;
     }
     h1 {
-      color: #111;
-      margin-bottom: 10px;
-    }
-    p {
-      color: #555;
-      margin-bottom: 30px;
-    }
-
-    /* INPUT UPLOAD */
-    .upload-box {
-      border: 2px dashed #0066ff;
-      padding: 40px;
-      border-radius: 10px;
-      cursor: pointer;
-      color: #555;
+      font-size: 28px;
       margin-bottom: 20px;
-      transition: background 0.3s;
     }
-    .upload-box:hover {
-      background: #f0f6ff;
+    .upload-box, select {
+      width: 100%;
+      padding: 12px;
+      margin: 12px 0;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      font-size: 15px;
     }
-    input[type="file"] {
-      display: none;
-    }
-
-    /* BUTTON */
     button {
-      background: #0066ff;
+      background: #111;
       color: white;
       border: none;
-      padding: 12px 25px;
+      padding: 14px 28px;
       font-size: 16px;
-      border-radius: 25px;
+      border-radius: 6px;
       cursor: pointer;
-      transition: background 0.3s;
+      margin-top: 20px;
     }
     button:hover {
-      background: #0044aa;
+      background: #333;
     }
-
-    /* RESULT */
-    #result {
-      margin-top: 25px;
+    .result {
+      margin-top: 40px;
+      display: none;
     }
     video {
       width: 100%;
-      margin-top: 15px;
       border-radius: 10px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
     }
   </style>
 </head>
@@ -111,58 +90,48 @@
     </div>
   </nav>
 
-  <!-- CONTAINER -->
+  <!-- CONTENT -->
   <div class="container">
-    <h1>Créer ta vidéo 🎥</h1>
-    <p>Upload ton image et laisse l’IA la transformer en vidéo.</p>
+    <h1>Créer une vidéo à partir d'une image</h1>
 
-    <form id="uploadForm">
-      <label for="fileInput" class="upload-box">
-        📤 Cliquez pour choisir une image
-      </label>
-      <input type="file" id="fileInput" name="image" accept="image/*">
-      <br>
-      <button type="submit">✨ Générer la vidéo</button>
-    </form>
+    <!-- Upload -->
+    <input type="file" class="upload-box" accept="image/*">
 
-    <div id="result"></div>
+    <!-- Langue -->
+    <select>
+      <option>Choisissez une langue</option>
+      <option>Français</option>
+      <option>Anglais</option>
+      <option>Espagnol</option>
+      <option>Arabe</option>
+    </select>
+
+    <!-- Format -->
+    <select>
+      <option>Choisissez un format vidéo</option>
+      <option>16:9 (Horizontal)</option>
+      <option>9:16 (Vertical)</option>
+      <option>1:1 (Carré)</option>
+    </select>
+
+    <!-- Bouton -->
+    <button onclick="generateVideo()">✨ Générer la vidéo</button>
+
+    <!-- Résultat -->
+    <div class="result" id="result">
+      <h2>Votre vidéo est prête 🎬</h2>
+      <video controls autoplay loop>
+        <source src="https://sample-videos.com/video321/mp4/720/big_buck_bunny_720p_1mb.mp4" type="video/mp4">
+        Votre navigateur ne supporte pas la vidéo.
+      </video>
+    </div>
   </div>
 
   <script>
-    const form = document.getElementById('uploadForm');
-    const fileInput = document.getElementById('fileInput');
-    const resultDiv = document.getElementById('result');
-
-    form.addEventListener('submit', async (e) => {
-      e.preventDefault();
-      if (!fileInput.files[0]) {
-        alert("Merci de choisir une image !");
-        return;
-      }
-
-      const formData = new FormData();
-      formData.append("image", fileInput.files[0]);
-
-      resultDiv.innerHTML = "⏳ Génération en cours...";
-
-      try {
-        const res = await fetch("/generate", {
-          method: "POST",
-          body: formData
-        });
-        const data = await res.json();
-        if (data.videoUrl) {
-          resultDiv.innerHTML = `
-            ✅ Vidéo générée !<br>
-            <video controls src="${data.videoUrl}"></video>
-          `;
-        } else {
-          resultDiv.innerHTML = "❌ Erreur : " + data.error;
-        }
-      } catch (err) {
-        resultDiv.innerHTML = "⚠️ Erreur serveur.";
-      }
-    });
+    function generateVideo() {
+      document.getElementById("result").style.display = "block";
+    }
   </script>
+
 </body>
 </html>
